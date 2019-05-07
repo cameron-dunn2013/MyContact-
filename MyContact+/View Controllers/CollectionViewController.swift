@@ -10,19 +10,26 @@ import Foundation
 import UIKit
 
 
-class TableViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, ButtonDelegate{
+class CollectionViewController : UIViewController, ButtonDelegate{
+    
+    var isEditingCollection : Bool = false
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
+    
 
     
     var model = Model()
     var indexPath : IndexPath?
-    @IBOutlet weak var tableView : UITableView!
     
+    @IBAction func editTapped(_ sender: Any) {
+    }
     
-    func shareButtonTapped(sender: CustomTableViewCell) {
+    func shareButtonTapped(sender: CustomCollectionViewCell) {
 //        if UIDevice.current.userInterfaceIdiom == .pad{
 //
 //        }
-        
         switch sender.headerRow{
         case 0:
             guard let personalContact = sender.personalContact else {
@@ -77,91 +84,63 @@ class TableViewController : UIViewController, UITableViewDelegate, UITableViewDa
             destination.title = model.businessCards[indexPath!.row].cardName
         }
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section{
-        case 0:
-            return model.personalCards.count
-        case 1:
-            return model.businessCards.count
-        default:
-            return 0
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CustomTableViewCell
-        switch indexPath.section{
-        case 0:
-            cell.label.text = model.personalCards[indexPath.row].cardName
-            guard let cellImageData = model.personalCards[indexPath.row].image else {
-                cell.personalContact = model.personalCards[indexPath.row]
-                cell.headerRow = 0
-                cell.delegate = self
-                return cell
-            }
-            cell.contactImage.image = UIImage(data: cellImageData)
-            cell.personalContact = model.personalCards[indexPath.row]
-            cell.headerRow = 0
-            cell.delegate = self
-        case 1:
-            cell.label.text = model.businessCards[indexPath.row].cardName
-            guard let cellImageData = model.businessCards[indexPath.row].image else {
-                cell.businessContact = model.businessCards[indexPath.row]
-                cell.headerRow = 1
-                cell.delegate = self
-                return cell
-            }
-            cell.contactImage.image = UIImage(data: cellImageData)
-            cell.businessContact = model.businessCards[indexPath.row]
-            cell.headerRow = 1
-            cell.delegate = self
-        default:
-            print("Something went wrong, attempted to insert cell into section \(indexPath.section)")
-        }
-        return cell
-    }
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        switch section{
-        case 0:
-            return "Personal"
-        case 1:
-            return "Business"
-        default:
-            return ""
-        }
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if(editingStyle == .delete){
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: nil)
-            if(indexPath.section == 0){
-                model.personalCards.remove(at: indexPath.row)
-                model.savePersonalCards()
-            }else if(indexPath.section == 1){
-                model.businessCards.remove(at: indexPath.row)
-                model.saveBusinessCards()
-            }
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.indexPath = indexPath
-        if(indexPath.section == 0){
-            self.performSegue(withIdentifier: "EditPersonalSegue", sender: indexPath)
-        }else if(indexPath.section == 1){
-            self.performSegue(withIdentifier: "EditBusinessSegue", sender: indexPath)
-        }
-    }
-    @IBAction func editTable(_ sender: Any) {
-        tableView.setEditing(true, animated: true)
-    }
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        collectionView.reloadData()
+        if(model.businessCards.count > 0 && model.personalCards.count > 0){
+            collectionView.isHidden = false
+        }
     }
     override func viewDidLoad() {
         model.loadAllCards()
+        if(model.businessCards.count == 0 && model.personalCards.count == 0){
+            collectionView.isHidden = true
+        }
     }
     
+}
+
+
+
+//Collection view functions here
+extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDataSource{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        var returnInt = 0
+        if section == 0{
+            returnInt = model.personalCards.count
+        }
+        if section == 1{
+            returnInt = model.businessCards.count
+        }
+        return returnInt
+    }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCollectionViewCell
+        switch indexPath.section{
+        case 0:
+            cell.contactImage.image = UIImage(data: model.personalCards[indexPath.row].image!)
+            cell.personalContact = model.personalCards[indexPath.row]
+            cell.cardNameLabel.text = model.personalCards[indexPath.row].cardName
+            cell.typeLabel.text = "Personal"
+            cell.delegate = self
+            
+        case 1:
+            cell.businessContact = model.businessCards[indexPath.row]
+            cell.contactImage.image = UIImage(data: model.businessCards[indexPath.row].image!)
+            cell.cardNameLabel.text = model.businessCards[indexPath.row].cardName
+            cell.typeLabel.text = "Business"
+            cell.delegate = self
+        default:
+            print("Default was hit. Something went wrong")
+            
+        }
+        return cell
+    }
 }

@@ -9,5 +9,5 @@
 import Foundation
 import UIKit
 protocol ButtonDelegate{
-    func shareButtonTapped(sender: CustomTableViewCell)
+    func shareButtonTapped(sender: CustomCollectionViewCell)
 }

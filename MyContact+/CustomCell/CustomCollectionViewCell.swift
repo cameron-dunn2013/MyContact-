@@ -8,10 +8,12 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
-    @IBOutlet weak var label : UILabel!
+class CustomCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var cardNameLabel : UILabel!
     @IBOutlet weak var contactImage : UIImageView!
     @IBOutlet weak var button : UIButton!
+    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var deleteButton: UIButton!
     @IBAction func buttonPressed(sender: UIButton){
         delegate?.shareButtonTapped(sender: self)
     }
