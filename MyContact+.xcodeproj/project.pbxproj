@@ -10,7 +10,7 @@
 		E7066DBC2281F83F00D86FA5 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7066DBB2281F7CE00D86FA5 /* BebasNeue-Regular.ttf */; };
 		E71572BD2242D97D00B39357 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71572BC2242D97D00B39357 /* Contact.swift */; };
 		E717105221F3C4D4001A0621 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E717105121F3C4D4001A0621 /* CustomCollectionViewCell.swift */; };
-		E717105421F3CE36001A0621 /* ButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E717105321F3CE36001A0621 /* ButtonDelegate.swift */; };
+		E717105421F3CE36001A0621 /* DeleteButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E717105321F3CE36001A0621 /* DeleteButtonDelegate.swift */; };
 		E717105621F3CFBE001A0621 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E717105521F3CFBE001A0621 /* Model.swift */; };
 		E717105E21F3D5D3001A0621 /* BusinessCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E717105D21F3D5D3001A0621 /* BusinessCard.swift */; };
 		E717106021F3D6B5001A0621 /* PersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E717105F21F3D6B5001A0621 /* PersonalViewController.swift */; };
@@ -20,6 +20,7 @@
 		E7270FF021ED2042008F69A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7270FEF21ED2042008F69A6 /* Assets.xcassets */; };
 		E727101E21ED6EE9008F69A6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E727101D21ED6EE9008F69A6 /* CollectionViewController.swift */; };
 		E73A919521F4DDE40071416C /* CardTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73A919421F4DDE40071416C /* CardTypeViewController.swift */; };
+		E73AC2F422824088009C44F3 /* ShareButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73AC2F322824088009C44F3 /* ShareButtonDelegate.swift */; };
 		E77E2A7421F51BD100F710AB /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E2A7321F51BD100F710AB /* BusinessViewController.swift */; };
 		E7825631223AEFD3009171F7 /* Person.png in Resources */ = {isa = PBXBuildFile; fileRef = E7825630223AEFD3009171F7 /* Person.png */; };
 		E7991B7221ED990A00ADC7A6 /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7991B7121ED990A00ADC7A6 /* PersonalCard.swift */; };
@@ -29,7 +30,7 @@
 		E7066DBB2281F7CE00D86FA5 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		E71572BC2242D97D00B39357 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E717105121F3C4D4001A0621 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
-		E717105321F3CE36001A0621 /* ButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDelegate.swift; sourceTree = "<group>"; };
+		E717105321F3CE36001A0621 /* DeleteButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButtonDelegate.swift; sourceTree = "<group>"; };
 		E717105521F3CFBE001A0621 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		E717105D21F3D5D3001A0621 /* BusinessCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessCard.swift; sourceTree = "<group>"; };
 		E717105F21F3D6B5001A0621 /* PersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalViewController.swift; sourceTree = "<group>"; };
@@ -41,6 +42,7 @@
 		E7270FEF21ED2042008F69A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E727101D21ED6EE9008F69A6 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		E73A919421F4DDE40071416C /* CardTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTypeViewController.swift; sourceTree = "<group>"; };
+		E73AC2F322824088009C44F3 /* ShareButtonDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButtonDelegate.swift; sourceTree = "<group>"; };
 		E77E2A7321F51BD100F710AB /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		E7825630223AEFD3009171F7 /* Person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Person.png; path = "MyContact+/Person.png"; sourceTree = SOURCE_ROOT; };
 		E7991B7121ED990A00ADC7A6 /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
@@ -130,7 +132,8 @@
 		E77E2A7721F51FFB00F710AB /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
-				E717105321F3CE36001A0621 /* ButtonDelegate.swift */,
+				E717105321F3CE36001A0621 /* DeleteButtonDelegate.swift */,
+				E73AC2F322824088009C44F3 /* ShareButtonDelegate.swift */,
 				E7270FDD21ED1AEA008F69A6 /* AppDelegate.swift */,
 			);
 			path = Delegates;
@@ -221,6 +224,7 @@
 				E71572BD2242D97D00B39357 /* Contact.swift in Sources */,
 				E7991B7221ED990A00ADC7A6 /* PersonalCard.swift in Sources */,
 				E717105E21F3D5D3001A0621 /* BusinessCard.swift in Sources */,
+				E73AC2F422824088009C44F3 /* ShareButtonDelegate.swift in Sources */,
 				E73A919521F4DDE40071416C /* CardTypeViewController.swift in Sources */,
 				E717106021F3D6B5001A0621 /* PersonalViewController.swift in Sources */,
 				E727101E21ED6EE9008F69A6 /* CollectionViewController.swift in Sources */,
@@ -228,7 +232,7 @@
 				E717105621F3CFBE001A0621 /* Model.swift in Sources */,
 				E7270FDE21ED1AEA008F69A6 /* AppDelegate.swift in Sources */,
 				E77E2A7421F51BD100F710AB /* BusinessViewController.swift in Sources */,
-				E717105421F3CE36001A0621 /* ButtonDelegate.swift in Sources */,
+				E717105421F3CE36001A0621 /* DeleteButtonDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -356,7 +356,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="413" height="805"/>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="cnc-vL-awb">
-                                                    <rect key="frame" x="127.66666666666669" y="529" width="158" height="232"/>
+                                                    <rect key="frame" x="127.66666666666669" y="465" width="158" height="232"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYg-oV-tDB">
                                                             <rect key="frame" x="0.0" y="0.0" width="158" height="58"/>
@@ -412,7 +412,7 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                             <connections>
-                                                                <action selector="buttonPressedWithSender:" destination="brG-Bi-P4m" eventType="touchUpInside" id="Kf1-gi-Gda"/>
+                                                                <action selector="deleteButtonPressed:" destination="brG-Bi-P4m" eventType="touchUpInside" id="lkj-Bf-DWZ"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
@@ -446,7 +446,7 @@
                                             <constraint firstItem="WRt-Ug-ucW" firstAttribute="leading" secondItem="brG-Bi-P4m" secondAttribute="leading" id="fhx-Vc-isN"/>
                                             <constraint firstItem="WRt-Ug-ucW" firstAttribute="top" secondItem="brG-Bi-P4m" secondAttribute="top" id="gJo-UE-pEY"/>
                                             <constraint firstAttribute="bottom" secondItem="WRt-Ug-ucW" secondAttribute="bottom" id="gTY-pN-puM"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="cnc-vL-awb" secondAttribute="bottom" constant="36" id="ngC-lV-Pmt"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="cnc-vL-awb" secondAttribute="bottom" constant="100" id="ngC-lV-Pmt"/>
                                             <constraint firstAttribute="trailing" secondItem="WRt-Ug-ucW" secondAttribute="trailing" id="sr1-uq-nFT"/>
                                         </constraints>
                                         <connections>

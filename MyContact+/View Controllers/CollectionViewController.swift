@@ -10,12 +10,49 @@ import Foundation
 import UIKit
 
 
-class CollectionViewController : UIViewController, ButtonDelegate{
+class CollectionViewController : UIViewController, ShareButtonDelegate, DeleteButtonDelegate{
+    
+    func deleteButtonTapped(sender: CustomCollectionViewCell) {
+        guard let indexPath = sender.indexPath else {return}
+        
+        switch indexPath.section{
+        case 0:
+            let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete '\(model.personalCards[indexPath.row].cardName ?? "[Unknown Card]")'?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: {_ in
+                self.stopEditing()
+                self.model.personalCards.remove(at: indexPath.row)
+                self.collectionView.reloadData()
+                let totalCards: Int = self.model.businessCards.count + self.model.personalCards.count
+                if totalCards == 0{
+                    self.collectionView.isHidden = true
+                }
+                self.model.savePersonalCards()
+            }))
+            self.present(alert,animated: true)
+        case 1:
+            let alert = UIAlertController(title: "Confirm", message: "Are you sure you want to delete '\(model.businessCards[indexPath.row].cardName ?? "[Unknown Card]")'?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Confirm", style: .destructive, handler: {_ in
+                self.stopEditing()
+                self.model.businessCards.remove(at: indexPath.row)
+                self.collectionView.reloadData()
+                let totalCards: Int = self.model.businessCards.count + self.model.personalCards.count
+                if totalCards == 0{
+                    self.collectionView.isHidden = true
+                }
+                self.model.saveBusinessCards()
+            }))
+            self.present(alert,animated: true)
+        default:
+            print("Default case was hit")
+        }
+    }
+    
     
     var isEditingCollection : Bool = false
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
     
     
 
@@ -24,13 +61,25 @@ class CollectionViewController : UIViewController, ButtonDelegate{
     var indexPath : IndexPath?
     
     @IBAction func editTapped(_ sender: Any) {
+        beginEditing()
+    }
+    
+    
+    @objc func stopEditing(){
+        isEditingCollection = false
+        collectionView.reloadData()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(beginEditing))
+    }
+    
+    
+    @objc func beginEditing(){
+        isEditingCollection = true
+        collectionView.reloadData()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(stopEditing))
     }
     
     func shareButtonTapped(sender: CustomCollectionViewCell) {
-//        if UIDevice.current.userInterfaceIdiom == .pad{
-//
-//        }
-        switch sender.headerRow{
+        switch sender.indexPath?.section{
         case 0:
             guard let personalContact = sender.personalContact else {
                 let alert = UIAlertController(title: "Error", message: "Something went wrong, no contact information was found.", preferredStyle: .alert)
@@ -64,7 +113,18 @@ class CollectionViewController : UIViewController, ButtonDelegate{
             print("Default case was hit")
         }
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.section{
+        case 0:
+            self.indexPath = indexPath
+            self.performSegue(withIdentifier: "EditPersonalSegue", sender: nil)
+        case 1:
+            self.indexPath = indexPath
+            self.performSegue(withIdentifier: "EditBusinessSegue", sender: nil)
+        default:
+            print("Default case hit")
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "CardTypeSegue"){
@@ -85,16 +145,17 @@ class CollectionViewController : UIViewController, ButtonDelegate{
         }
     }
     override func viewWillAppear(_ animated: Bool) {
+        model.loadAllCards()
         collectionView.reloadData()
-        if(model.businessCards.count > 0 && model.personalCards.count > 0){
+        if(model.businessCards.count == 0 && model.personalCards.count == 0){
+            collectionView.isHidden = true
+        }
+        if(model.businessCards.count > 0 || model.personalCards.count > 0){
             collectionView.isHidden = false
         }
     }
     override func viewDidLoad() {
-        model.loadAllCards()
-        if(model.businessCards.count == 0 && model.personalCards.count == 0){
-            collectionView.isHidden = true
-        }
+        
     }
     
 }
@@ -129,14 +190,28 @@ extension CollectionViewController: UICollectionViewDelegate, UICollectionViewDa
             cell.personalContact = model.personalCards[indexPath.row]
             cell.cardNameLabel.text = model.personalCards[indexPath.row].cardName
             cell.typeLabel.text = "Personal"
-            cell.delegate = self
+            cell.shareDelegate = self
+            cell.deleteDelegate = self
+            cell.indexPath = indexPath
+            if(isEditingCollection){
+                cell.deleteButton.isHidden = false
+            }else{
+                cell.deleteButton.isHidden = true
+            }
             
         case 1:
             cell.businessContact = model.businessCards[indexPath.row]
             cell.contactImage.image = UIImage(data: model.businessCards[indexPath.row].image!)
             cell.cardNameLabel.text = model.businessCards[indexPath.row].cardName
             cell.typeLabel.text = "Business"
-            cell.delegate = self
+            cell.shareDelegate = self
+            cell.deleteDelegate = self
+            cell.indexPath = indexPath
+            if(isEditingCollection){
+                cell.deleteButton.isHidden = false
+            }else{
+                cell.deleteButton.isHidden = true
+            }
         default:
             print("Default was hit. Something went wrong")
             

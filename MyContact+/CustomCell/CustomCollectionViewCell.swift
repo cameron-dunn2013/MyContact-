@@ -14,10 +14,16 @@ class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var button : UIButton!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
-    @IBAction func buttonPressed(sender: UIButton){
-        delegate?.shareButtonTapped(sender: self)
+    @IBAction func shareButtonPressed(sender: UIButton){
+        shareDelegate?.shareButtonTapped(sender: self)
     }
-    var delegate : ButtonDelegate?
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        deleteDelegate?.deleteButtonTapped(sender: self)
+    }
+    
+    var shareDelegate : ShareButtonDelegate?
+    var deleteDelegate : DeleteButtonDelegate?
+    var indexPath : IndexPath?
     var personalContact : PersonalCard?
     var businessContact : BusinessCard?
     var headerRow : Int = 0
