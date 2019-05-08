@@ -7,15 +7,28 @@
 //
 
 import UIKit
-
+import GoogleMobileAds
+import SwiftyStoreKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases{
+                switch purchase.transaction.transactionState{
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction{
+                        SwiftyStoreKit.finishTransaction(purchase.transaction)
+                    }
+                case .failed,.purchasing,.deferred:
+                    break
+                }
+            }
+        }
         return true
     }
 

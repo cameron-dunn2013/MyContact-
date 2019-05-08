@@ -10,6 +10,63 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="Ju4-Yt-PeO">
+            <objects>
+                <viewController id="Xoy-Qr-aPq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mzg-a6-Bik">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDl-nt-3Ng">
+                                <rect key="frame" x="20" y="160" width="374" height="264"/>
+                                <mutableString key="text">Hi! I'm Cameron, the developer of this app. This project is one that I started while I was in school bettering my skills as a programmer and quickly became a passion project. I used to have this app listed as a paid app, but decided that I would rather give users the choice to donate while still being able to contribute; thus, the ads. I realize that ads aren't the best thing and I assure you that without the ads this app looks much better, so I hope you'll think it's worth the dollar to remove the ads and support my career as an app developer. I hope that you enjoy the app and find many reasons to make more and more cards!</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0MW-bZ-pV1">
+                                <rect key="frame" x="72.666666666666686" y="744" width="269" height="98"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.29411764709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Remove Ads">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <font key="NSFont" size="71" name="BebasNeue-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="removeAdsButtonTapped:" destination="GPi-i9-zoi" eventType="touchUpInside" id="SNw-nt-p17"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dDl-nt-3Ng" firstAttribute="leading" secondItem="0dc-td-BEj" secondAttribute="leading" constant="20" id="JgW-VK-s5d"/>
+                            <constraint firstItem="0dc-td-BEj" firstAttribute="trailing" secondItem="dDl-nt-3Ng" secondAttribute="trailing" constant="20" id="Lfs-UU-Ela"/>
+                            <constraint firstItem="0dc-td-BEj" firstAttribute="bottom" secondItem="0MW-bZ-pV1" secondAttribute="bottom" constant="20" id="X38-kS-Wbl"/>
+                            <constraint firstItem="dDl-nt-3Ng" firstAttribute="top" secondItem="0dc-td-BEj" secondAttribute="top" constant="20" id="axA-Bl-dRb"/>
+                            <constraint firstItem="0MW-bZ-pV1" firstAttribute="centerX" secondItem="Mzg-a6-Bik" secondAttribute="centerX" id="f9t-H6-Fhb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0dc-td-BEj"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Settings" id="a4j-GL-ZKf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eSi-oU-DHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GPi-i9-zoi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2099" y="-518"/>
+        </scene>
         <!--New Personal-->
         <scene sceneID="KNu-RH-g2h">
             <objects>
@@ -467,13 +524,23 @@
                                     <outlet property="delegate" destination="k8t-BI-Xuj" id="oks-Q3-l4B"/>
                                 </connections>
                             </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0HK-uE-Qif" customClass="GADBannerView">
+                                <rect key="frame" x="57" y="140" width="300" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AbS-oO-2eE"/>
+                                    <constraint firstAttribute="width" constant="300" id="Ez3-fL-hZN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="fAa-M6-PHD" secondAttribute="bottom" id="42V-Jb-ojK"/>
                             <constraint firstItem="CLe-P8-iaa" firstAttribute="leading" secondItem="EDJ-Dq-sS2" secondAttribute="leading" constant="20" id="5iR-nr-Gxh"/>
                             <constraint firstItem="fAa-M6-PHD" firstAttribute="leading" secondItem="EDJ-Dq-sS2" secondAttribute="leading" id="EVI-OM-Bgf"/>
+                            <constraint firstItem="0HK-uE-Qif" firstAttribute="centerX" secondItem="Xbf-eF-cpt" secondAttribute="centerX" id="Kms-EZ-W7b"/>
                             <constraint firstItem="fAa-M6-PHD" firstAttribute="top" secondItem="EDJ-Dq-sS2" secondAttribute="top" id="YQM-ym-6Tx"/>
+                            <constraint firstItem="0HK-uE-Qif" firstAttribute="top" secondItem="EDJ-Dq-sS2" secondAttribute="top" id="f7G-qg-DMt"/>
                             <constraint firstItem="EDJ-Dq-sS2" firstAttribute="trailing" secondItem="fAa-M6-PHD" secondAttribute="trailing" id="oU4-sH-qp5"/>
                             <constraint firstAttribute="trailing" secondItem="CLe-P8-iaa" secondAttribute="trailing" constant="20" id="pmZ-RJ-EpG"/>
                             <constraint firstItem="CLe-P8-iaa" firstAttribute="centerY" secondItem="Xbf-eF-cpt" secondAttribute="centerY" id="v2G-Vx-Va0"/>
@@ -486,13 +553,21 @@
                                 <action selector="editTapped:" destination="k8t-BI-Xuj" id="WV2-8X-nMm"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="r9A-vB-aSy">
-                            <connections>
-                                <segue destination="aKA-4I-QfM" kind="show" identifier="CardTypeSegue" id="D5T-Gw-d5T"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="r9A-vB-aSy">
+                                <connections>
+                                    <segue destination="aKA-4I-QfM" kind="show" identifier="CardTypeSegue" id="D5T-Gw-d5T"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Remove Ads" id="9Sq-CX-oLK">
+                                <connections>
+                                    <segue destination="Xoy-Qr-aPq" kind="show" id="OFk-av-s8x"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="bannerView" destination="0HK-uE-Qif" id="7di-Bs-gc0"/>
                         <outlet property="collectionView" destination="fAa-M6-PHD" id="SuB-WF-M7H"/>
                         <segue destination="Mel-2d-nQX" kind="show" identifier="EditPersonalSegue" id="eUg-qr-nmF"/>
                         <segue destination="ghT-4H-YjR" kind="show" identifier="EditBusinessSegue" id="ghQ-IZ-DLf"/>
@@ -513,7 +588,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please select the type of card you would like to make:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYb-xY-G8N">
                                 <rect key="frame" x="20" y="200" width="374" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6vN-v1-46U">
@@ -524,7 +599,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-73-2KO">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
-                                                <state key="normal" title="Personal"/>
+                                                <state key="normal" title="Personal">
+                                                    <color key="titleColor" red="0.043137254901960784" green="0.29411764705882354" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="Mel-2d-nQX" kind="show" identifier="NewPersonalCardSegue" id="6Vm-0s-USy"/>
                                                 </connections>
@@ -533,7 +610,7 @@
                                                 <rect key="frame" x="0.0" y="38" width="398" height="61"/>
                                                 <string key="text">Personal cards are good for allowing people that you know on a personal level to contact you and have a vast amount of your information.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -543,7 +620,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmp-L2-gxS">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
-                                                <state key="normal" title="Business"/>
+                                                <state key="normal" title="Business">
+                                                    <color key="titleColor" red="0.043137254899999998" green="0.29411764709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="ghT-4H-YjR" kind="show" identifier="NewBusinessCardSegue" id="YSD-AL-XuB"/>
                                                 </connections>
@@ -551,7 +630,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Business cards are a good option for creating cards that you will be distributing to clientele or customers." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iji-iS-qSb">
                                                 <rect key="frame" x="0.0" y="38" width="398" height="61"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -873,7 +952,7 @@
         <image name="twitter" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ghQ-IZ-DLf"/>
-        <segue reference="eUg-qr-nmF"/>
+        <segue reference="YSD-AL-XuB"/>
+        <segue reference="6Vm-0s-USy"/>
     </inferredMetricsTieBreakers>
 </document>

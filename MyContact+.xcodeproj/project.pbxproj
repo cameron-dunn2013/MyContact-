@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AAB9222BD5A073BA50C1F7D /* Pods_MyContact_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4C30CB482C8CF4FB6470255 /* Pods_MyContact_.framework */; };
 		E7066DBC2281F83F00D86FA5 /* BebasNeue-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7066DBB2281F7CE00D86FA5 /* BebasNeue-Regular.ttf */; };
 		E71572BD2242D97D00B39357 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71572BC2242D97D00B39357 /* Contact.swift */; };
 		E717105221F3C4D4001A0621 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E717105121F3C4D4001A0621 /* CustomCollectionViewCell.swift */; };
@@ -24,9 +25,13 @@
 		E77E2A7421F51BD100F710AB /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E2A7321F51BD100F710AB /* BusinessViewController.swift */; };
 		E7825631223AEFD3009171F7 /* Person.png in Resources */ = {isa = PBXBuildFile; fileRef = E7825630223AEFD3009171F7 /* Person.png */; };
 		E7991B7221ED990A00ADC7A6 /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7991B7121ED990A00ADC7A6 /* PersonalCard.swift */; };
+		E7DFF3EA2282857000672D60 /* InAppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DFF3E92282857000672D60 /* InAppPurchases.swift */; };
+		E7DFF3EC2282864C00672D60 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DFF3EB2282864C00672D60 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8DF2C52FDF391C1583C42EE2 /* Pods-MyContact+.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyContact+.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyContact+/Pods-MyContact+.debug.xcconfig"; sourceTree = "<group>"; };
+		C4C30CB482C8CF4FB6470255 /* Pods_MyContact_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyContact_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7066DBB2281F7CE00D86FA5 /* BebasNeue-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BebasNeue-Regular.ttf"; sourceTree = "<group>"; };
 		E71572BC2242D97D00B39357 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		E717105121F3C4D4001A0621 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -46,6 +51,9 @@
 		E77E2A7321F51BD100F710AB /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		E7825630223AEFD3009171F7 /* Person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Person.png; path = "MyContact+/Person.png"; sourceTree = SOURCE_ROOT; };
 		E7991B7121ED990A00ADC7A6 /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
+		E7DFF3E92282857000672D60 /* InAppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchases.swift; sourceTree = "<group>"; };
+		E7DFF3EB2282864C00672D60 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		ECC94AED8ADC64EBD6A2100D /* Pods-MyContact+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyContact+.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyContact+/Pods-MyContact+.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +61,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AAB9222BD5A073BA50C1F7D /* Pods_MyContact_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5661EAB8A3099EA0939D76F5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DF2C52FDF391C1583C42EE2 /* Pods-MyContact+.debug.xcconfig */,
+				ECC94AED8ADC64EBD6A2100D /* Pods-MyContact+.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E717105921F3D064001A0621 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E7066DBB2281F7CE00D86FA5 /* BebasNeue-Regular.ttf */,
 				E717105521F3CFBE001A0621 /* Model.swift */,
+				E7DFF3E92282857000672D60 /* InAppPurchases.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +112,7 @@
 				E73A919421F4DDE40071416C /* CardTypeViewController.swift */,
 				E717105F21F3D6B5001A0621 /* PersonalViewController.swift */,
 				E77E2A7321F51BD100F710AB /* BusinessViewController.swift */,
+				E7DFF3EB2282864C00672D60 /* SettingsViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -102,6 +122,8 @@
 			children = (
 				E7270FDC21ED1AEA008F69A6 /* MyContact+ */,
 				E7270FDB21ED1AEA008F69A6 /* Products */,
+				5661EAB8A3099EA0939D76F5 /* Pods */,
+				FD4B868A4A8CE7DF05E3B435 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +170,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		FD4B868A4A8CE7DF05E3B435 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4C30CB482C8CF4FB6470255 /* Pods_MyContact_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -155,9 +185,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E7270FEC21ED1AEA008F69A6 /* Build configuration list for PBXNativeTarget "MyContact+" */;
 			buildPhases = (
+				E726969220A845001CC2422D /* [CP] Check Pods Manifest.lock */,
 				E7270FD621ED1AEA008F69A6 /* Sources */,
 				E7270FD721ED1AEA008F69A6 /* Frameworks */,
 				E7270FD821ED1AEA008F69A6 /* Resources */,
+				DACBE224492A173123AD478B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,12 +248,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DACBE224492A173123AD478B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MyContact+/Pods-MyContact+-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MyContact+/Pods-MyContact+-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E726969220A845001CC2422D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MyContact+-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E7270FD621ED1AEA008F69A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E71572BD2242D97D00B39357 /* Contact.swift in Sources */,
+				E7DFF3EA2282857000672D60 /* InAppPurchases.swift in Sources */,
 				E7991B7221ED990A00ADC7A6 /* PersonalCard.swift in Sources */,
 				E717105E21F3D5D3001A0621 /* BusinessCard.swift in Sources */,
 				E73AC2F422824088009C44F3 /* ShareButtonDelegate.swift in Sources */,
@@ -229,6 +313,7 @@
 				E717106021F3D6B5001A0621 /* PersonalViewController.swift in Sources */,
 				E727101E21ED6EE9008F69A6 /* CollectionViewController.swift in Sources */,
 				E717105221F3C4D4001A0621 /* CustomCollectionViewCell.swift in Sources */,
+				E7DFF3EC2282864C00672D60 /* SettingsViewController.swift in Sources */,
 				E717105621F3CFBE001A0621 /* Model.swift in Sources */,
 				E7270FDE21ED1AEA008F69A6 /* AppDelegate.swift in Sources */,
 				E77E2A7421F51BD100F710AB /* BusinessViewController.swift in Sources */,
@@ -376,6 +461,7 @@
 		};
 		E7270FED21ED1AEA008F69A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DF2C52FDF391C1583C42EE2 /* Pods-MyContact+.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,6 +480,7 @@
 		};
 		E7270FEE21ED1AEA008F69A6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECC94AED8ADC64EBD6A2100D /* Pods-MyContact+.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

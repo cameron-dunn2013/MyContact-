@@ -200,6 +200,7 @@ class PersonalViewController: UIViewController, UITextFieldDelegate, UIImagePick
     @IBAction func save(_ sender: Any) {
         //set a variable equal to model.saveContact and test to see if it contains a value, if it does then present the
         //UIAlertController
+        showAds = true
         let contact = Contact()
         contact.personalContact = self.contact
         guard let alert = model?.saveContact(sender: .personal, contact: contact, cardNameEntry: cardNameEntry, streetAddressEntry: streetAddressEntry, cityEntry: cityEntry, imageUploaded: imageUploaded, presentImage: self.contact.image, stateEntry: stateEntry, emailEntry: emailEntry, websiteEntry: websiteEntry, firstNameEntry: firstNameEntry, lastNameEntry: lastNameEntry, phoneNumberEntry: phoneNumberEntry, redirected: redirected) else {

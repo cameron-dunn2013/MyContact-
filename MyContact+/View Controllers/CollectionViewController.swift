@@ -8,9 +8,15 @@
 
 import Foundation
 import UIKit
+import GoogleMobileAds
 
-
-class CollectionViewController : UIViewController, ShareButtonDelegate, DeleteButtonDelegate{
+class CollectionViewController : UIViewController,GADBannerViewDelegate, ShareButtonDelegate, DeleteButtonDelegate{
+    
+    
+    @IBOutlet weak var bannerView: GADBannerView!
+    var interstitial : GADInterstitial!
+    
+    
     
     func deleteButtonTapped(sender: CustomCollectionViewCell) {
         guard let indexPath = sender.indexPath else {return}
@@ -154,7 +160,24 @@ class CollectionViewController : UIViewController, ShareButtonDelegate, DeleteBu
             collectionView.isHidden = false
         }
     }
+    override func viewDidAppear(_ animated: Bool) {
+        if showAds{
+            if interstitial.isReady{
+                interstitial.present(fromRootViewController: self)
+                showAds = false
+            }
+        }
+        bannerView.load(GADRequest())
+        
+    }
     override func viewDidLoad() {
+        super.viewDidAppear(true)
+        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6327624401500144/1986032457")
+        let request = GADRequest()
+        interstitial.load(request)
+        bannerView.delegate = self
+        bannerView.adUnitID = "ca-app-pub-6327624401500144/7554532830"
+        bannerView.rootViewController = self
         
     }
     

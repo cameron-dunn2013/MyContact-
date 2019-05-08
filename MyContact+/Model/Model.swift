@@ -15,6 +15,8 @@ enum SenderCases{
     case business
 }
 
+var showAds: Bool = false
+
 extension CNContactVCardSerialization {
     internal class func vcardDataAppendingPhoto(vcard: Data, photoAsBase64String photo: String) -> Data? {
         let vcardAsString = String(data: vcard, encoding: .utf8)
