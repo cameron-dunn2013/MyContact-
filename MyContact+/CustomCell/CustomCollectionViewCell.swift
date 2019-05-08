@@ -11,12 +11,13 @@ import UIKit
 class CustomCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cardNameLabel : UILabel!
     @IBOutlet weak var contactImage : UIImageView!
-    @IBOutlet weak var button : UIButton!
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
-    @IBAction func shareButtonPressed(sender: UIButton){
+    @IBOutlet weak var shareButton: UIButton!
+    @IBAction func shareButtonPressed(_ sender: Any) {
         shareDelegate?.shareButtonTapped(sender: self)
     }
+    
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
         deleteDelegate?.deleteButtonTapped(sender: self)
     }

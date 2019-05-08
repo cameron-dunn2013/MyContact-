@@ -91,7 +91,7 @@ class CollectionViewController : UIViewController, ShareButtonDelegate, DeleteBu
             let activityController = model.shareContact(contact: contactVCF)
             if UIDevice.current.userInterfaceIdiom == .pad {
                 activityController!.popoverPresentationController?.sourceView = self.view
-                activityController!.popoverPresentationController?.sourceRect = sender.button.frame
+                activityController!.popoverPresentationController?.sourceRect = sender.shareButton.frame
             }
             self.present(activityController!, animated: true)
             
@@ -106,7 +106,7 @@ class CollectionViewController : UIViewController, ShareButtonDelegate, DeleteBu
             let activityController = model.shareContact(contact: contactVCF)
             if UIDevice.current.userInterfaceIdiom == .pad {
                 activityController!.popoverPresentationController?.sourceView = self.view
-                activityController!.popoverPresentationController?.sourceRect = sender.button.frame
+                activityController!.popoverPresentationController?.sourceRect = sender.shareButton.frame
             }
             self.present(activityController!, animated: true)
         default:
