@@ -16,7 +16,7 @@ enum SenderCases{
 }
 
 var showAds: Bool = false
-
+var premiumUser : Bool = false
 extension CNContactVCardSerialization {
     internal class func vcardDataAppendingPhoto(vcard: Data, photoAsBase64String photo: String) -> Data? {
         let vcardAsString = String(data: vcard, encoding: .utf8)
@@ -65,6 +65,11 @@ class Model{
         dateFormatter.timeStyle = .none
         let returnDate = dateFormatter.string(from: date)
         return returnDate
+    }
+    
+    func loadPremiumUser(){
+        premiumUser = UserDefaults.standard.bool(forKey: "PremiumUser")
+        
     }
     
     

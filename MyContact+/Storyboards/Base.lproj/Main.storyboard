@@ -486,7 +486,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFO-eQ-iTU">
-                                                    <rect key="frame" x="28" y="123.66666666666669" width="141.33333333333334" height="58"/>
+                                                    <rect key="frame" x="28" y="173.66666666666666" width="141.33333333333334" height="58"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Personal">
                                                             <attributes>
@@ -503,7 +503,7 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="UFO-eQ-iTU" firstAttribute="centerY" secondItem="brG-Bi-P4m" secondAttribute="centerY" constant="-250" id="1Jr-sm-HCA"/>
+                                            <constraint firstItem="UFO-eQ-iTU" firstAttribute="centerY" secondItem="brG-Bi-P4m" secondAttribute="centerY" constant="-200" id="1Jr-sm-HCA"/>
                                             <constraint firstItem="cnc-vL-awb" firstAttribute="leading" secondItem="brG-Bi-P4m" secondAttribute="leadingMargin" constant="20" id="2fG-8u-CsJ"/>
                                             <constraint firstItem="WRt-Ug-ucW" firstAttribute="leading" secondItem="brG-Bi-P4m" secondAttribute="leading" id="9qG-9g-6Ll"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="cnc-vL-awb" secondAttribute="trailing" constant="20" id="BMP-zQ-CNi"/>
@@ -963,7 +963,7 @@
         <image name="twitter" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YSD-AL-XuB"/>
-        <segue reference="6Vm-0s-USy"/>
+        <segue reference="ghQ-IZ-DLf"/>
+        <segue reference="eUg-qr-nmF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
             switch result{
             case .success(let purchase):
                 print("Purchase success: \(purchase.productId)")
+                UserDefaults.standard.set(true, forKey: "PremiumUser")
             case .error(let error):
                 switch error.code{
                 case .unknown: print("Unkown error. Please contact support")

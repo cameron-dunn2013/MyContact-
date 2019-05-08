@@ -161,6 +161,9 @@ class CollectionViewController : UIViewController,GADBannerViewDelegate, ShareBu
         }
     }
     override func viewDidAppear(_ animated: Bool) {
+        if premiumUser{
+            return
+        }
         if showAds{
             if interstitial.isReady{
                 interstitial.present(fromRootViewController: self)
@@ -178,7 +181,7 @@ class CollectionViewController : UIViewController,GADBannerViewDelegate, ShareBu
         bannerView.delegate = self
         bannerView.adUnitID = "ca-app-pub-6327624401500144/7554532830"
         bannerView.rootViewController = self
-        
+        model.loadPremiumUser()
     }
     
 }
