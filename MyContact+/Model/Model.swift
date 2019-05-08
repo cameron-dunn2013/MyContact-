@@ -122,7 +122,7 @@ class Model{
     }
     
     
-    func saveContact(sender: SenderCases, contact: Contact, cardNameEntry : UITextField, streetAddressEntry : UITextField, cityEntry: UITextField, imageUploaded: Data?, stateEntry : UITextField, emailEntry : UITextField, websiteEntry : UITextField, firstNameEntry : UITextField, lastNameEntry : UITextField, phoneNumberEntry : UITextField, redirected : Bool) -> UIAlertController?{
+    func saveContact(sender: SenderCases, contact: Contact, cardNameEntry : UITextField, streetAddressEntry : UITextField, cityEntry: UITextField, imageUploaded: Data?, presentImage : Data?, stateEntry : UITextField, emailEntry : UITextField, websiteEntry : UITextField, firstNameEntry : UITextField, lastNameEntry : UITextField, phoneNumberEntry : UITextField, redirected : Bool) -> UIAlertController?{
         self.redirected = redirected
         switch sender{
         case .personal:
@@ -135,6 +135,8 @@ class Model{
         }
         if(imageUploaded != nil){
             contact.personalContact!.image = imageUploaded
+        }else if(presentImage != nil){
+            contact.personalContact!.image = presentImage
         }else{
             contact.personalContact!.image = UIImage(named: "Person.png")?.jpegData(compressionQuality: 1)
         }
@@ -173,7 +175,7 @@ class Model{
         if redirected{
             var counter = 0
             for index in personalCards{
-                if(index.cardName == contact.personalContact!.cardName){
+                if(index.uuid == contact.personalContact!.uuid){
                     personalCards[counter] = contact.personalContact!
                 }
                 counter += 1
@@ -194,6 +196,8 @@ class Model{
             }
             if(imageUploaded != nil){
                 contact.businessContact!.image = imageUploaded
+            }else if(presentImage != nil){
+                contact.businessContact!.image = presentImage
             }else{
                 contact.businessContact!.image = UIImage(named: "Person.png")?.jpegData(compressionQuality: 1)
             }
@@ -232,7 +236,7 @@ class Model{
             if redirected{
                 var counter = 0
                 for index in businessCards{
-                    if(index.cardName == contact.personalContact!.cardName){
+                    if(index.uuid == contact.businessContact!.uuid){
                         businessCards[counter] = contact.businessContact!
                     }
                     counter += 1

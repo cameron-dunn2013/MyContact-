@@ -202,7 +202,7 @@ class PersonalViewController: UIViewController, UITextFieldDelegate, UIImagePick
         //UIAlertController
         let contact = Contact()
         contact.personalContact = self.contact
-        guard let alert = model?.saveContact(sender: .personal, contact: contact, cardNameEntry: cardNameEntry, streetAddressEntry: streetAddressEntry, cityEntry: cityEntry, imageUploaded: imageUploaded, stateEntry: stateEntry, emailEntry: emailEntry, websiteEntry: websiteEntry, firstNameEntry: firstNameEntry, lastNameEntry: lastNameEntry, phoneNumberEntry: phoneNumberEntry, redirected: redirected) else {
+        guard let alert = model?.saveContact(sender: .personal, contact: contact, cardNameEntry: cardNameEntry, streetAddressEntry: streetAddressEntry, cityEntry: cityEntry, imageUploaded: imageUploaded, presentImage: self.contact.image, stateEntry: stateEntry, emailEntry: emailEntry, websiteEntry: websiteEntry, firstNameEntry: firstNameEntry, lastNameEntry: lastNameEntry, phoneNumberEntry: phoneNumberEntry, redirected: redirected) else {
         navigationController?.popToRootViewController(animated: true)
             return
         }

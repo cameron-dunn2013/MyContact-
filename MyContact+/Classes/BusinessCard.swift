@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 class BusinessCard : Codable{
+    var uuid : UUID = UUID()
     var cardName : String?
     var firstName : String?
     var lastName : String?

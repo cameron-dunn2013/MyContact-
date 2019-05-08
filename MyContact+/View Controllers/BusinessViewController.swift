@@ -195,11 +195,12 @@ class BusinessViewController: UIViewController, UITextFieldDelegate, UIImagePick
         guard let newContactImage = UIImage(data: imageData) else {return}
         contactImage.image = newContactImage
         
+        
     }
     @IBAction func save(_ sender: Any) {
         let contact = Contact()
         contact.businessContact = self.contact
-        guard let alert = model?.saveContact(sender: .business, contact: contact, cardNameEntry: cardNameEntry, streetAddressEntry: streetAddressEntry, cityEntry: cityEntry, imageUploaded: imageUploaded, stateEntry: stateEntry, emailEntry: emailEntry, websiteEntry: websiteEntry, firstNameEntry: firstNameEntry, lastNameEntry: lastNameEntry, phoneNumberEntry: phoneNumberEntry, redirected: redirected) else{
+        guard let alert = model?.saveContact(sender: .business, contact: contact, cardNameEntry: cardNameEntry, streetAddressEntry: streetAddressEntry, cityEntry: cityEntry, imageUploaded: imageUploaded, presentImage: self.contact.image, stateEntry: stateEntry, emailEntry: emailEntry, websiteEntry: websiteEntry, firstNameEntry: firstNameEntry, lastNameEntry: lastNameEntry, phoneNumberEntry: phoneNumberEntry, redirected: redirected) else{
             navigationController?.popToRootViewController(animated: true)
             return
         }
