@@ -29,6 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
             }
         }
+        SwiftyStoreKit.shouldAddStorePaymentHandler = {payment, product in
+            return true
+        }
         return true
     }
 

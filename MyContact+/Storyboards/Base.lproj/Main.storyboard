@@ -13,31 +13,24 @@
         <!--Settings-->
         <scene sceneID="Ju4-Yt-PeO">
             <objects>
-                <viewController id="Xoy-Qr-aPq" sceneMemberID="viewController">
+                <viewController id="Xoy-Qr-aPq" customClass="SettingsViewController" customModule="MyContactPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mzg-a6-Bik">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDl-nt-3Ng">
                                 <rect key="frame" x="20" y="160" width="374" height="264"/>
-                                <mutableString key="text">Hi! I'm Cameron, the developer of this app. This project is one that I started while I was in school bettering my skills as a programmer and quickly became a passion project. I used to have this app listed as a paid app, but decided that I would rather give users the choice to donate while still being able to contribute; thus, the ads. I realize that ads aren't the best thing and I assure you that without the ads this app looks much better, so I hope you'll think it's worth the dollar to remove the ads and support my career as an app developer. I hope that you enjoy the app and find many reasons to make more and more cards!</mutableString>
+                                <string key="text">Hi! I'm Cameron, the developer of this app. This project is one that I started while I was in school bettering my skills as a programmer and quickly became a passion project. I used to have this app listed as a paid app, but decided that I would rather give users the choice to donate while still being able to contribute; thus, the ads. I realize that ads aren't the best thing and I assure you that without the ads this app looks much better, so I hope you'll think it's worth the dollar to remove the ads and support my career as an app developer. I hope that you enjoy the app and find many reasons to make more and more cards!</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0MW-bZ-pV1">
-                                <rect key="frame" x="72.666666666666686" y="744" width="269" height="98"/>
-                                <color key="backgroundColor" red="0.043137254899999998" green="0.29411764709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="Remove Ads">
-                                            <attributes>
-                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <font key="NSFont" size="71" name="BebasNeue-Regular"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MW-bZ-pV1">
+                                <rect key="frame" x="94.666666666666686" y="794" width="225" height="48"/>
+                                <color key="backgroundColor" red="0.077282055799999999" green="0.64862090380000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Restore Purchase">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -46,12 +39,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="removeAdsButtonTapped:" destination="GPi-i9-zoi" eventType="touchUpInside" id="SNw-nt-p17"/>
+                                    <action selector="restorePurchaseTapped:" destination="Xoy-Qr-aPq" eventType="touchUpInside" id="mBK-hR-Um2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-rk-63g">
+                                <rect key="frame" x="126" y="726" width="162" height="48"/>
+                                <color key="backgroundColor" red="0.043137254899999998" green="0.29411764709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Remove Ads">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="removeAdsButtonTapped:" destination="Xoy-Qr-aPq" eventType="touchUpInside" id="Qjb-GP-dtZ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="B4Q-rk-63g" firstAttribute="centerX" secondItem="0dc-td-BEj" secondAttribute="centerX" id="Bf4-Qu-2MA"/>
+                            <constraint firstItem="0MW-bZ-pV1" firstAttribute="top" secondItem="B4Q-rk-63g" secondAttribute="bottom" constant="20" id="IQU-Jp-YjJ"/>
                             <constraint firstItem="dDl-nt-3Ng" firstAttribute="leading" secondItem="0dc-td-BEj" secondAttribute="leading" constant="20" id="JgW-VK-s5d"/>
                             <constraint firstItem="0dc-td-BEj" firstAttribute="trailing" secondItem="dDl-nt-3Ng" secondAttribute="trailing" constant="20" id="Lfs-UU-Ela"/>
                             <constraint firstItem="0dc-td-BEj" firstAttribute="bottom" secondItem="0MW-bZ-pV1" secondAttribute="bottom" constant="20" id="X38-kS-Wbl"/>
@@ -63,7 +75,6 @@
                     <navigationItem key="navigationItem" title="Settings" id="a4j-GL-ZKf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eSi-oU-DHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="GPi-i9-zoi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2099" y="-518"/>
         </scene>
