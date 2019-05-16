@@ -26,7 +26,6 @@ class CardTypeViewController: UIViewController {
             destination.cardEditing = false
         }
     }
-
     /*
     // MARK: - Navigation
 

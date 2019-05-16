@@ -56,6 +56,9 @@ class Model{
         case snapchat
         case twitter
     }
+    func test(completion: @escaping (Void?, Error?) -> Void){
+        completion(nil, nil)
+    }
     
     
     var currentAccount : accounts?

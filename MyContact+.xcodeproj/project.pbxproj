@@ -25,6 +25,7 @@
 		E77E2A7421F51BD100F710AB /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E2A7321F51BD100F710AB /* BusinessViewController.swift */; };
 		E7825631223AEFD3009171F7 /* Person.png in Resources */ = {isa = PBXBuildFile; fileRef = E7825630223AEFD3009171F7 /* Person.png */; };
 		E7991B7221ED990A00ADC7A6 /* PersonalCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7991B7121ED990A00ADC7A6 /* PersonalCard.swift */; };
+		E7A8B62D228DB6B9001D0814 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7A8B62C228DB6B9001D0814 /* StoreKit.framework */; };
 		E7DFF3EA2282857000672D60 /* InAppPurchases.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DFF3E92282857000672D60 /* InAppPurchases.swift */; };
 		E7DFF3EC2282864C00672D60 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DFF3EB2282864C00672D60 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +52,7 @@
 		E77E2A7321F51BD100F710AB /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
 		E7825630223AEFD3009171F7 /* Person.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Person.png; path = "MyContact+/Person.png"; sourceTree = SOURCE_ROOT; };
 		E7991B7121ED990A00ADC7A6 /* PersonalCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalCard.swift; sourceTree = "<group>"; };
+		E7A8B62C228DB6B9001D0814 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E7DFF3E92282857000672D60 /* InAppPurchases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchases.swift; sourceTree = "<group>"; };
 		E7DFF3EB2282864C00672D60 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		ECC94AED8ADC64EBD6A2100D /* Pods-MyContact+.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyContact+.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyContact+/Pods-MyContact+.release.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AAB9222BD5A073BA50C1F7D /* Pods_MyContact_.framework in Frameworks */,
+				E7A8B62D228DB6B9001D0814 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +176,7 @@
 		FD4B868A4A8CE7DF05E3B435 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7A8B62C228DB6B9001D0814 /* StoreKit.framework */,
 				C4C30CB482C8CF4FB6470255 /* Pods_MyContact_.framework */,
 			);
 			name = Frameworks;
@@ -212,6 +216,11 @@
 				TargetAttributes = {
 					E7270FD921ED1AEA008F69A6 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

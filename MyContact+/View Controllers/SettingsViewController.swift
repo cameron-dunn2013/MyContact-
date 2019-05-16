@@ -13,11 +13,15 @@ class SettingsViewController: UIViewController {
 
     
     @IBAction func removeAdsButtonTapped(_ sender: Any) {
-        SwiftyStoreKit.purchaseProduct("CameronDunn.MyContact-.RemoveAds", quantity: 1, atomically: true){result in
+        SwiftyStoreKit.purchaseProduct("RemoveAdvertisements", quantity: 1, atomically: true){result in
             switch result{
             case .success(let purchase):
                 print("Purchase success: \(purchase.productId)")
                 UserDefaults.standard.set(true, forKey: "PremiumUser")
+                let alert = UIAlertController(title: "Thank you!", message: "Thank you for your purchase of the premium MyContact+, please force close the app and relaunch to see without ads.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Restart", style: .destructive, handler: {_ in
+                    fatalError()
+                }))
             case .error(let error):
                 switch error.code{
                 case .unknown: print("Unkown error. Please contact support")
@@ -36,7 +40,7 @@ class SettingsViewController: UIViewController {
         }
     }
     @IBAction func restorePurchaseTapped(_ sender: Any) {
-        SwiftyStoreKit.retrieveProductsInfo(["CameronDunn.MyContact-.RemoveAds"]) { result in
+        SwiftyStoreKit.retrieveProductsInfo(["RemoveAdvertisements"]) { result in
             if let product = result.retrievedProducts.first {
                 SwiftyStoreKit.purchaseProduct(product, quantity: 1, atomically: true) { result in
                     // handle result (same as above)
@@ -59,7 +63,7 @@ class SettingsViewController: UIViewController {
 //Extension for SwiftyStoreKit
 extension SettingsViewController{
     func retrieveProductInfo(){
-        SwiftyStoreKit.retrieveProductsInfo(["CameronDunn.MyContact-.RemoveAds"]){result in
+        SwiftyStoreKit.retrieveProductsInfo(["RemoveAdvertisements"]){result in
             if let product = result.retrievedProducts.first{
                 let priceString = product.localizedPrice!
                 print("Product: \(product.localizedDescription), price: \(priceString)")
@@ -67,7 +71,7 @@ extension SettingsViewController{
             else if let invalidProductId = result.invalidProductIDs.first{
                 print("Invalid product identifier: \(invalidProductId)")
             }else{
-                print("Error: \(result.error)")
+                print("Error: \(result.error!)")
             }
         }
     }

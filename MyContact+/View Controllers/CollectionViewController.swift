@@ -175,16 +175,27 @@ class CollectionViewController : UIViewController,GADBannerViewDelegate, ShareBu
     }
     override func viewDidLoad() {
         super.viewDidAppear(true)
-        interstitial = GADInterstitial(adUnitID: "ca-app-pub-6327624401500144/1986032457")
-        let request = GADRequest()
-        interstitial.load(request)
-        bannerView.delegate = self
-        bannerView.adUnitID = "ca-app-pub-6327624401500144/7554532830"
-        bannerView.rootViewController = self
         model.loadPremiumUser()
+        if(premiumUser == false){
+            interstitial = GADInterstitial(adUnitID: "ca-app-pub-6327624401500144/1986032457")
+            let request = GADRequest()
+            interstitial.load(request)
+            bannerView.delegate = self
+            bannerView.adUnitID = "ca-app-pub-6327624401500144/7554532830"
+            bannerView.rootViewController = self
+        }else{
+            self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(pushNewCardSegue))]
+        }
+        
     }
-    
+    @objc func pushNewCardSegue(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: "CardType")
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
 }
+
+
 
 
 

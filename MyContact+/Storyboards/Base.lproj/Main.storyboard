@@ -26,9 +26,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0MW-bZ-pV1">
-                                <rect key="frame" x="94.666666666666686" y="794" width="225" height="48"/>
+                                <rect key="frame" x="131" y="806" width="152" height="36"/>
                                 <color key="backgroundColor" red="0.077282055799999999" green="0.64862090380000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Restore Purchase">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,9 +43,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B4Q-rk-63g">
-                                <rect key="frame" x="126" y="726" width="162" height="48"/>
+                                <rect key="frame" x="152.66666666666666" y="750" width="108.99999999999997" height="36"/>
                                 <color key="backgroundColor" red="0.043137254899999998" green="0.29411764709999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Remove Ads">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -92,7 +92,7 @@
                                     <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="4dI-K1-CDz">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Person" translatesAutoresizingMaskIntoConstraints="NO" id="xcR-9w-5DW">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="xcR-9w-5DW">
                                                 <rect key="frame" x="107" y="20" width="200" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="8VM-c6-y1r"/>
@@ -591,7 +591,7 @@
         <!--Create New-->
         <scene sceneID="hnq-lY-5EU">
             <objects>
-                <viewController id="aKA-4I-QfM" customClass="CardTypeViewController" customModule="MyContactPlus" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CardType" id="aKA-4I-QfM" customClass="CardTypeViewController" customModule="MyContactPlus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zPh-1s-A4R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nvi-3w-JVG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2107" y="134"/>
+            <point key="canvasLocation" x="2105.7971014492755" y="133.92857142857142"/>
         </scene>
         <!--New Business-->
         <scene sceneID="Pb4-6Z-LUt">
@@ -682,7 +682,7 @@
                                     <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="rl7-Jl-LpG">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Person" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-cK-Uej">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="Tqf-cK-Uej">
                                                 <rect key="frame" x="107" y="20" width="200" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="FPL-zo-awE"/>
@@ -956,14 +956,14 @@
     </scenes>
     <resources>
         <image name="Instagram" width="398" height="398"/>
-        <image name="Person" width="500" height="500"/>
         <image name="Personal" width="30" height="30"/>
         <image name="Snapchat" width="512" height="512"/>
         <image name="facebook" width="512" height="512"/>
+        <image name="icon" width="1024" height="1024"/>
         <image name="twitter" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ghQ-IZ-DLf"/>
-        <segue reference="eUg-qr-nmF"/>
+        <segue reference="YSD-AL-XuB"/>
+        <segue reference="6Vm-0s-USy"/>
     </inferredMetricsTieBreakers>
 </document>
